@@ -8,6 +8,10 @@
             --navbar-height: 59px;
         }
 
+        body {
+            min-height: 600px;
+        }
+
         #navbar {
             display: flex;
             align-items: center;
@@ -85,8 +89,8 @@
         }
 
         #myDropdown {
-            margin-top: 22px;
-            right: 0;
+            top:35px;
+            right: 12px;
             display: none;
             position: absolute;
             background-color: #f9f9f9;
@@ -100,7 +104,7 @@
             float: none;
             color: black;
             width: 100%;
-            font-size: 15px;
+            font-size: 25px;
             border: none;
             display: block;
         }
@@ -208,6 +212,7 @@
         .display1 {
             margin-left: 10vw;
         }
+
         .data {
             position: absolute;
             width: 12vw;
@@ -218,14 +223,65 @@
             text-align: center;
             font-size: x-large;
         }
+
         .display1:hover .data {
             opacity: 1;
+        }
+
+        #notvisible {
+            min-height: 600px;
+            /* z-index: -1; */
+        }
+
+        @media screen and (max-height: 520px) {
+            body {
+                background-color: rgb(38, 38, 184);
+                height: 510px;;
+            }
+            #Home{
+                position: relative;
+                top: -115%;
+                width: 100%;
+                height:100%;
+                /* background-color: rgb(38, 38, 184); */
+            }
+            #About{
+                position: relative;
+                top: -130%;
+                width: 100%;
+                height:100%;
+                background-color: rgb(38, 38, 184);
+            }
+            #Myproject{
+                position: relative;
+                top: -130%;
+                width: 100%;
+                height:100%;
+                background-color: rgb(38, 38, 184);
+            }
+            #Mycontacts{
+                position: relative;
+                top: -120%;
+                width: 100%;
+                height:100%;
+                background-color: rgb(38, 38, 184);
+            }
+            #extradetails{
+                background-color: white;
+                align-items: center;
+                justify-content: center;
+                display: block;
+                top: -100%;
+                position: relative;
+                z-index: 0;
+            }
         }
 
         @media screen and (max-width: 880px) {
             .name {
                 margin-top: 10%;
             }
+
             #navbar span {
                 font-size: 16px;
             }
@@ -235,6 +291,7 @@
             #dropdown {
                 display: block;
             }
+
             #navbar ul {
                 display: none;
             }
@@ -275,6 +332,7 @@
 </head>
 
 <body>
+    <div id="notvisible"></div>
     <nav id="navbar">
         <span>My Portfolio</span>
         <ul>
@@ -284,7 +342,7 @@
             <li><button onclick="opencontact()">Contacts</button></li>
         </ul>
         <button id="dropdown" onclick="dropnow()">Dropdown <i class="down"></i></button>
-        
+
     </nav>
     <div id="myDropdown">
         <button onclick="openhome()">Home</button>
@@ -422,8 +480,9 @@
             alert("Email copied!");
         }
         function dropnow() {
-            let z = document.getElementById("myDropdown");
-            z.style.display = "block";
+            console.log("Clicked")
+            let zk = document.getElementById("myDropdown");
+            zk.style.display = "block";
         }
     </script>
 </body>
