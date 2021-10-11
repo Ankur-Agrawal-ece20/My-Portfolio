@@ -233,7 +233,18 @@
             min-height: 600px;
             /* z-index: -1; */
         }
-
+        .modify{
+            display: grid;
+            grid-template-columns: max-content auto;
+        }
+        .modify button{
+            margin-left: 10px;
+            font-size: medium;
+            background-color: rgb(90, 86, 86);
+        }
+        .modify button:hover{
+            background-color: gray;
+        }
         @media screen and (max-height: 520px) {
             body {
                 background-color: rgb(38, 38, 184);
@@ -316,6 +327,9 @@
             #Home{
                 height: 60%;
             }
+            .modify{
+                grid-template-columns: auto;
+            }
         }
         @media screen and (max-width: 416px) {
             .display1 {
@@ -385,11 +399,15 @@
         <span style="color: white; margin-left: 10%;margin-top: 5%;margin-right: 10%">
             <div class="name">My Contacts</div><br>
             <input type="text" class="contactdetails" value="912XXXXXX" id="mobno">
+            <div class="modify">
             <div id="mobno" class="subject">My mobile no: 912XXXXXX</div>
-            <button class="shiftbutton" style="background-color: gray;" onclick="copymob()">Copy</button><br>
+            <button class="shiftbutton" onclick="copymob()">Copy</button><br>
+            </div>
             <input type="text" class="contactdetails" value="ankur.....@gmail.com" id="mail">
+            <div class="modify">
             <div class="subject">My email id: ankur.....@gmail.com</div>
-            <button class="shiftbutton" style="background-color: gray;" onclick="copymail()">Copy</button><br>
+            <button class="shiftbutton" onclick="copymail()">Copy</button><br>
+            </div>
             <div class="subject">You can also find me on telegram, linkedIn or github! (Hover if not visible)</div><br>
         </span>
     </div>
